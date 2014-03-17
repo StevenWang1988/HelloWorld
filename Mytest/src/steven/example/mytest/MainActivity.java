@@ -85,8 +85,6 @@ public class MainActivity extends Activity{
 		intent.setClass(MainActivity.this, InfoActivity.class);
 		startActivity(intent);
 		
-//		setContentView(R.layout.activity_info);
-//		MainActivity.this.finish();
 	}
 	public void logoutOnClick(View view){
 		Intent intent = new Intent();
