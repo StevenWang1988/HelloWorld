@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="steven.example.mytest.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/topLayout_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="logoutOnClick"
+                android:text="@string/logOut" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/topLayout_center"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="20"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_world"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/topLayout_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="infoOnClick"
+                android:text="@string/Info" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/mylistView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.36" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_test1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="@string/test1" />
+
+        <Button
+            android:id="@+id/btn_test2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="@string/test2" />
+
+        <Button
+            android:id="@+id/btn_test3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="@string/test3" />
+    </LinearLayout>
+
+</LinearLayout>

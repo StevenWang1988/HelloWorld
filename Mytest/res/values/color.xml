@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <drawable android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/drawable1" name="textColor">#3939CC</drawable>
+    <drawable android:id="@+id/drawable1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="backGround">#908282</drawable>
+    
+</resources>

@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="steven.example.mytest.LoginActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <EditText
+        android:id="@+id/editT_userPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="@string/passHint"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editT_userPwd"
+        android:layout_alignParentLeft="true"
+        android:text="@string/userPass"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editT_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="@string/inputHint" />
+
+    <TextView
+        android:id="@+id/textv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editT_userName"
+        android:layout_alignParentLeft="true"
+        android:text="@string/userName"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="LoginOnClick"
+        android:text="@string/login" />
+
+</RelativeLayout>
