@@ -252,7 +252,7 @@ int id btn_detail_back 0x7f050054
 int id btn_info 0x7f05004c
 int id btn_infoBack 0x7f05003d
 int id btn_login 0x7f050040
-int id btn_test1 0x7f05004f
+int id btn_newSpace 0x7f05004f
 int id btn_test2 0x7f050050
 int id btn_test3 0x7f050051
 int id checkbox 0x7f05002d
@@ -377,6 +377,7 @@ int string image_head 0x7f0a0018
 int string inputHint 0x7f0a001e
 int string logOut 0x7f0a0020
 int string login 0x7f0a001d
+int string newSpace 0x7f0a0021
 int string passHint 0x7f0a001f
 int string test1 0x7f0a0012
 int string test2 0x7f0a0013

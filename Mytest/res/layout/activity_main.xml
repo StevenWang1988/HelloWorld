@@ -73,11 +73,14 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/btn_test1"
+            android:id="@+id/btn_newSpace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:text="@string/test1" />
+            android:onClick="newSpaceOnClick"
+            android:text="@string/newSpace"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_test2"

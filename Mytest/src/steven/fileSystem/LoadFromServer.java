@@ -27,7 +27,7 @@ public class LoadFromServer extends AsyncTask<String, String, String>{
 	
 	public String LoadJSONFromServer(String uriAPI){
 		String json = null;
-		Log.v("uriAPI", uriAPI);
+		Log.v("LoadJSONFromServer", uriAPI);
 		HttpGet httpRequest = new HttpGet(uriAPI);
 		
 		try {

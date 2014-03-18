@@ -39,14 +39,6 @@ public class LoginActivity extends ActionBarActivity {
 		progressBar_login.setVisibility(View.INVISIBLE);
 	}
 	
-	public void HandlerOnClick(View view){
-//		Log.i(TAG,"HandlerOnClick");
-//		userName = (EditText) LoginActivity.this.findViewById(R.id.editT_userName);
-//		userPwd = (EditText) LoginActivity.this.findViewById(R.id.editT_userPwd);
-//		uriAPI = uriAPI + "userName=" + userName.getText().toString() + "&" + "userPwd=" + userPwd.getText().toString();
-//		progressOnOff(ON);
-//		ServiceRequest.request(new PostHandler(), uriAPI);
-	}
 	
 	public void LoginOnClick(View view){
 		Log.i(TAG,"LoginOnClick");
