@@ -3,30 +3,24 @@ package steven.login;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
 
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 public class AsyncLogin extends AsyncTask<String, String, String>{
 	private static final String TAG = "AsyncLogin";
 	
 	HttpURLConnection conn = null;
+	Handler handler;
+	int what;
+	
+	public AsyncLogin(Handler handler){
+		this.handler = handler;
+	}
 
 	@Override
 	protected String doInBackground(String... uri) {
@@ -36,7 +30,7 @@ public class AsyncLogin extends AsyncTask<String, String, String>{
 
 	private String userLogin(String uriAPI) {
 		// TODO Auto-generated method stub
-		String conf = null;
+		what = 0;
 		try {
 			URL url = new URL(uriAPI);
 			Log.i(TAG, "1 start");
@@ -52,17 +46,20 @@ public class AsyncLogin extends AsyncTask<String, String, String>{
 			
 			// read data
 			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			conf = reader.readLine();
+			what = Integer.parseInt(reader.readLine());
 			reader.close();
 		} catch (IOException | InterruptedException e) {
 			Log.e(TAG, e.getMessage());
 		}
 		conn.disconnect();
-		return conf;
+		Message msg = handler.obtainMessage();
+		msg.what = what;
+		handler.sendMessage(msg);
+		return null;
 	}
 
 	protected void onPostExecute(String conf){
-		Log.v(TAG, "onPostExecute :"+ conf);
+//		Log.v(TAG, "onPostExecute :"+ conf);
 	}
 	
 }

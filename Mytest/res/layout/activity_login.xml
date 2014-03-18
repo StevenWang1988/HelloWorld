@@ -10,7 +10,7 @@
         android:id="@+id/editT_userPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/btn_login"
         android:layout_alignParentLeft="true"
         android:ems="10"
         android:hint="@string/passHint"
@@ -31,7 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView1"
         android:layout_alignParentLeft="true"
+        android:maxLines="1"
         android:ems="10"
+        
         android:hint="@string/inputHint" />
 
     <TextView
@@ -44,12 +46,20 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="LoginOnClick"
         android:text="@string/login" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_login"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
 </RelativeLayout>

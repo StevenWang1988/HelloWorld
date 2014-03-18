@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import steven.login.ServerSetting;
 
 
 public class MainActivity extends Activity{
@@ -29,9 +30,8 @@ public class MainActivity extends Activity{
 	String userName;
 	String userDetail;
 	MyItem[] myitem;
-	private static final String IP = "192.168.137.1";
-	private static final int PORT = 8080;
-	String uriAPI = "http://" + IP + ":" + PORT + "/userList";
+	
+	String uriAPI = ServerSetting.ServerLocation + ServerSetting.UserList;
 	String JSONString = null;
 	
 	@Override
