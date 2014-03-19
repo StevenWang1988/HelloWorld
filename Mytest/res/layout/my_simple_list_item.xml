@@ -12,6 +12,7 @@
         android:background="#444"
         android:padding="3dp"
         android:contentDescription="@string/image_head"
+        android:scaleType="centerInside"
         android:src="@drawable/ic_launcher" />
 
     <TextView

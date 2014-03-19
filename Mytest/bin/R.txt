@@ -379,7 +379,6 @@ int string logOut 0x7f0a0020
 int string login 0x7f0a001d
 int string newSpace 0x7f0a0021
 int string passHint 0x7f0a001f
-int string test1 0x7f0a0012
 int string test2 0x7f0a0013
 int string test3 0x7f0a0014
 int string textId 0x7f0a0017
@@ -387,6 +386,7 @@ int string title_activity_info 0x7f0a0016
 int string title_activity_login 0x7f0a001a
 int string title_activity_second 0x7f0a0015
 int string title_activity_user_data 0x7f0a0019
+int string userData 0x7f0a0012
 int string userName 0x7f0a001b
 int string userPass 0x7f0a001c
 int style AppBaseTheme 0x7f0b0083

@@ -69,6 +69,7 @@ public class LoginActivity extends ActionBarActivity {
 	class PostHandler extends Handler{
 		public void handleMessage(Message msg){
 			Log.d("handleMessage", "msg.what: " + msg.what);
+			Log.d("handleMessage", "msg.obj: " + msg.obj);
 			int State = msg.what;
 			
 			switch(State){

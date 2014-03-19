@@ -1,16 +1,14 @@
 package listview.newitem;
 
-import android.widget.ImageView;
-
 public class MyItem {
 	private String title;
 	private String content;
-	private ImageView headImage;
+	private String headImageUrl;
 	
-	public MyItem(String title, String content, ImageView headImage){
+	public MyItem(String title, String content, String headImageUrl){
 		this.setTitle(title);
 		this.setContent(content);
-		this.setHeadImage(headImage);
+		this.setHeadImageUrl(headImageUrl);
 	}
 
 	public MyItem() {
@@ -33,11 +31,11 @@ public class MyItem {
 		this.content = content;
 	}
 
-	public ImageView getHeadImage() {
-		return headImage;
+	public String getHeadImageUrl() {
+		return headImageUrl;
 	}
 
-	public void setHeadImage(ImageView headImage) {
-		this.headImage = headImage;
+	public void setHeadImageUrl(String headImageUrl) {
+		this.headImageUrl = headImageUrl;
 	}
 }

@@ -54,6 +54,7 @@ public class AsyncLogin extends AsyncTask<String, String, String>{
 //		conn.disconnect();
 		Message msg = handler.obtainMessage();
 		msg.what = what;
+		msg.obj = conn;
 		handler.sendMessage(msg);
 		return null;
 	}
