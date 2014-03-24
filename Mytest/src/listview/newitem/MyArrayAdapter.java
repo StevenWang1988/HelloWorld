@@ -3,6 +3,7 @@ package listview.newitem;
 import steven.example.mytest.R;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
@@ -41,21 +42,28 @@ public class MyArrayAdapter extends ArrayAdapter<MyItem>{
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			convertView = inflater.inflate(resourceId, parent, false);
 		}
-		MyItem myItem = items[position]; 
+//		MyItem myItem = items[position]; 
 		
 		contentView = (TextView) convertView.findViewById(R.id.content);
-		contentView.setText(myItem.getContent());
+		contentView.setText(items[position].getContent());
 		
 		titleView = (TextView) convertView.findViewById(R.id.title);
-		titleView.setText(myItem.getTitle());
+		titleView.setText(items[position].getTitle());
 		
 		headImage = (ImageView) convertView.findViewById(R.id.headImage);
-		LoadBitmap loadbitmap = new LoadBitmap();
-		loadbitmap.setImageView(headImage);
-		loadbitmap.execute(items[position].getHeadImageUrl());
+		LoadBitmap.loadBitmap(position, headImage, this.items);
+		
+//		LoadBitmap loadbitmap = new LoadBitmap();
+//		loadbitmap.setImageView(headImage);
+//		loadbitmap.execute(items[position].getHeadImageUrl());
+		
 		
 		adapterCount++;
 		return convertView;
 	}
+	
+	
 
 }
+
+

@@ -3,6 +3,7 @@ package steven.example.mytest;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -50,6 +51,15 @@ public class UserData extends ActionBarActivity {
 		btn_back.setOnClickListener(new Button.OnClickListener(){
 			public void onClick(View v){
 				UserData.this.finish();
+			}
+		});
+		
+		iv_headImage.setOnClickListener(new ImageView.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(UserData.this, FullscreenImageActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

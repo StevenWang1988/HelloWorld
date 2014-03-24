@@ -51,16 +51,17 @@ public class AsyncLogin extends AsyncTask<String, String, String>{
 		} catch (IOException | InterruptedException e) {
 			Log.e(TAG, e.getMessage());
 		}
-//		conn.disconnect();
-		Message msg = handler.obtainMessage();
-		msg.what = what;
-		msg.obj = conn;
-		handler.sendMessage(msg);
+		
 		return null;
 	}
 
 	protected void onPostExecute(String conf){
-//		Log.v(TAG, "onPostExecute :"+ conf);
+		Log.v(TAG, "onPostExecute");
+		conn.disconnect();
+		Message msg = handler.obtainMessage();
+		msg.what = what;
+		msg.obj = conn;
+		handler.sendMessage(msg);
 	}
 	
 }

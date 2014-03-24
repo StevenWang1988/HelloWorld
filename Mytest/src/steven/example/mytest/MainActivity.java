@@ -1,13 +1,11 @@
 package steven.example.mytest;
 
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import steven.fileSystem.LoadFile;
 import steven.fileSystem.LoadFromServer;
 import listview.newitem.MyArrayAdapter;
 import listview.newitem.MyItem;
@@ -16,9 +14,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 import steven.login.ServerSetting;
 
@@ -61,7 +57,7 @@ public class MainActivity extends Activity{
 				JSONObject jsonObject = new JSONObject(JSONString);
 				JSONArray nameArray = jsonObject.getJSONArray("name");
 				JSONArray detailArray = jsonObject.getJSONArray("detail");
-//				JSONArray urlArray = jsonObject.getJSONArray("url");
+				JSONArray urlArray = jsonObject.getJSONArray("url");
 				
 				int length = nameArray.length();
 				myitem = new MyItem[length];
@@ -70,7 +66,7 @@ public class MainActivity extends Activity{
 					userDetail = detailArray.getString(i);
 //					headImageUrl = ServerSetting.ServerLocation + ServerSetting.HeadImage + 
 //								   "headImageUrl=" + urlArray.getString(i);
-					headImageUrl = imageThumbUrls[i];
+					headImageUrl = urlArray.getString(i);
 					myitem[i] = new MyItem(userName, userDetail, headImageUrl);
 				}
 			} else {
@@ -92,7 +88,6 @@ public class MainActivity extends Activity{
 		Intent intent = new Intent();
 		intent.setClass(MainActivity.this, InfoActivity.class);
 		startActivity(intent);
-		
 	}
 	public void logoutOnClick(View view){
 		Intent intent = new Intent();

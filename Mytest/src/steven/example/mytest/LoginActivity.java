@@ -21,7 +21,8 @@ import steven.login.ServerSetting;
 public class LoginActivity extends ActionBarActivity {
 
 	private static final String TAG = "LoginActivity";
-	String uriAPI = ServerSetting.ServerLocation + ServerSetting.Login;
+//	String uriAPI = ServerSetting.ServerLocation + ServerSetting.Login;
+	private String uriAPI = "";
 	EditText userName;
 	EditText userPwd;
 	ProgressBar progressBar_login;
@@ -42,9 +43,11 @@ public class LoginActivity extends ActionBarActivity {
 	
 	public void LoginOnClick(View view){
 		Log.i(TAG,"LoginOnClick");
+		uriAPI = ServerSetting.ServerLocation + ServerSetting.Login;
 		userName = (EditText) LoginActivity.this.findViewById(R.id.editT_userName);
 		userPwd = (EditText) LoginActivity.this.findViewById(R.id.editT_userPwd);
 		uriAPI = uriAPI + "userName=" + userName.getText().toString() + "&" + "userPwd=" + userPwd.getText().toString();
+		Log.v(TAG, uriAPI);
 		progressOnOff(ON);
 		ServiceRequest.request(new PostHandler(), uriAPI);
 	}
@@ -68,14 +71,13 @@ public class LoginActivity extends ActionBarActivity {
 	
 	class PostHandler extends Handler{
 		public void handleMessage(Message msg){
-			Log.d("handleMessage", "msg.what: " + msg.what);
-			Log.d("handleMessage", "msg.obj: " + msg.obj);
-			int State = msg.what;
+			Log.d("TAG", "handleMessage msg.what: " + msg.what);
+			Log.d("TAG", "handleMessage msg.obj: " + msg.obj);
 			
-			switch(State){
+			switch(msg.what){
 			case LoginStates.NORESPONSE:
-				Log.v(TAG,"msg is null");
-				Toast.makeText(LoginActivity.this, "登入失敗!", Toast.LENGTH_LONG).show();
+				Log.v(TAG, "handleMessage msg is null");
+				Toast.makeText(LoginActivity.this, "伺服器無回應!", Toast.LENGTH_LONG).show();
 				progressOnOff(OFF);
 				break;
 			case LoginStates.SUCCESS:
@@ -85,13 +87,18 @@ public class LoginActivity extends ActionBarActivity {
 				LoginActivity.this.finish();
 				break;
 			case LoginStates.USERNAME_ERR:
-				Log.v(TAG,"msg is userNameErr");
+				Log.v(TAG,"handleMessage msg is userNameErr");
 				Toast.makeText(LoginActivity.this, "使用者名稱錯誤!", Toast.LENGTH_LONG).show();
 				progressOnOff(OFF);
 				break;
 			case LoginStates.USERPWD_ERR:
-				Log.v(TAG,"msg is userNameErr");
+				Log.v(TAG,"handleMessage msg is userNameErr");
 				Toast.makeText(LoginActivity.this, "密碼錯誤!", Toast.LENGTH_LONG).show();
+				progressOnOff(OFF);
+				break;
+			case LoginStates.FAIL:
+				Log.v(TAG, "unknow error");
+				Toast.makeText(LoginActivity.this, "未知錯誤!", Toast.LENGTH_LONG).show();
 				progressOnOff(OFF);
 				break;
 			}

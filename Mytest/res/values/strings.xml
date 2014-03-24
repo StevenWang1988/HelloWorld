@@ -22,5 +22,8 @@
     <string name="passHint">請輸入使用者密碼</string>
     <string name="logOut">登出</string>
     <string name="newSpace">建立相簿</string>
+    <string name="title_activity_fullscreen_image">FullscreenImageActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

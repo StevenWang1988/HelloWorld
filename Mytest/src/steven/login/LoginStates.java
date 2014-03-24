@@ -5,4 +5,5 @@ public class LoginStates {
 	public static final int SUCCESS = 1;
 	public static final int USERNAME_ERR = 2;
 	public static final int USERPWD_ERR = 3;
+	public static final int FAIL = 4;
 }
