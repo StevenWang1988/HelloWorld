@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import listview.newitem.MyItem;
@@ -22,7 +21,7 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
 	
 	private String ImageURL;
 	public int data = 0;
-	
+
 	public LoadBitmap(ImageView view, String url){
 		imageViewReference = new WeakReference<ImageView>(view);
 		this.ImageURL = url;
@@ -65,7 +64,7 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
             final LoadBitmap bitmapWorkerTask =
                     getBitmapWorkerTask(imageView);
             if (this == bitmapWorkerTask && imageView != null) {
-                imageView.setImageBitmap(mBitmap);
+            	imageView.setImageBitmap(mBitmap);
             }
         }
 	}
@@ -101,7 +100,7 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
 	
 	public static void loadBitmap(int resId, ImageView imageView, MyItem items[]) {
 	    if (cancelPotentialWork(resId, imageView)) {
-	        final LoadBitmap loadbitmap = new LoadBitmap(imageView, items[resId].getHeadImageUrl());
+	        final LoadBitmap loadbitmap = new LoadBitmap(imageView, items[resId].getImageURL());
 	        final AsyncDrawable asyncDrawable =
 	                new AsyncDrawable(null, null, loadbitmap);
 	        imageView.setImageDrawable(asyncDrawable);

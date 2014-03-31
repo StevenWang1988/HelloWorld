@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <ImageView
-        android:id="@+id/headImage"
+        android:id="@+id/couponImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="5dp"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/headImage"
+        android:layout_toRightOf="@+id/couponImage"
         android:maxLines="1"
         android:text="title"
         android:textColor="@drawable/textColor"
@@ -28,15 +28,51 @@
         android:textSize="15sp" />
 
 	<TextView
-	    android:id="@+id/content"
+	    android:id="@+id/description"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/title"
-	    android:layout_toRightOf="@+id/headImage"
+	    android:layout_below="@+id/startDate"
+	    android:layout_toRightOf="@+id/couponImage"
 	    android:ellipsize="end"
 	    android:maxLines="3"
-	    android:text="content"
+	    android:text="description"
 	    android:textColor="@drawable/textColor"
+	    android:textSize="14sp" />
+
+	<TextView
+	    android:id="@+id/textView3"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/startDate"
+	    android:layout_alignBottom="@+id/startDate"
+	    android:layout_toRightOf="@+id/couponImage"
+	    android:text="@string/couponDate"
+	    android:textSize="12sp" />
+
+	<TextView
+	    android:id="@+id/textView4"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/title"
+	    android:layout_toRightOf="@+id/startDate"
+	    android:text="~" />
+
+	<TextView
+	    android:id="@+id/startDate"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignTop="@+id/textView4"
+	    android:layout_toRightOf="@+id/textView3"
+	    android:text="startDate"
+	    android:textSize="12sp" />
+
+	<TextView
+	    android:id="@+id/endDate"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/title"
+	    android:layout_toRightOf="@+id/textView4"
+	    android:text="endDate"
 	    android:textSize="12sp" />
 
 </RelativeLayout>

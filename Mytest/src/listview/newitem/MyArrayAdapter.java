@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +27,10 @@ public class MyArrayAdapter extends ArrayAdapter<MyItem>{
 	
 	private TextView contentView;
 	private TextView titleView;
+	private TextView startDateView;
+	private TextView endDateView;
 	private ImageView headImage;
+	private Animation myFadeInAnimation;
 	
 	public MyArrayAdapter(Context context, int resource, MyItem[] items) {
 		super(context, resource, items);
@@ -38,31 +43,31 @@ public class MyArrayAdapter extends ArrayAdapter<MyItem>{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent){
 		Log.v(TAG, "getView " + adapterCount);
+
 		if(convertView == null){
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			convertView = inflater.inflate(resourceId, parent, false);
 		}
-//		MyItem myItem = items[position]; 
-		
-		contentView = (TextView) convertView.findViewById(R.id.content);
-		contentView.setText(items[position].getContent());
-		
+
 		titleView = (TextView) convertView.findViewById(R.id.title);
-		titleView.setText(items[position].getTitle());
+		contentView = (TextView) convertView.findViewById(R.id.description);
+		startDateView = (TextView) convertView.findViewById(R.id.startDate);
+		endDateView = (TextView) convertView.findViewById(R.id.endDate);
 		
-		headImage = (ImageView) convertView.findViewById(R.id.headImage);
+		titleView.setText(items[position].getTitle());
+		contentView.setText(items[position].getDescription());
+		startDateView.setText(items[position].getStartDate());
+		endDateView.setText(items[position].getEndDate());
+		
+		headImage = (ImageView) convertView.findViewById(R.id.couponImage);
 		LoadBitmap.loadBitmap(position, headImage, this.items);
 		
-//		LoadBitmap loadbitmap = new LoadBitmap();
-//		loadbitmap.setImageView(headImage);
-//		loadbitmap.execute(items[position].getHeadImageUrl());
-		
-		
+		myFadeInAnimation = AnimationUtils.loadAnimation(headImage.getContext(), R.anim.fadein);
+		headImage.startAnimation(myFadeInAnimation);
+
 		adapterCount++;
 		return convertView;
 	}
-	
-	
 
 }
 

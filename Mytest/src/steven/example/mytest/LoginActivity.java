@@ -83,6 +83,9 @@ public class LoginActivity extends ActionBarActivity {
 			case LoginStates.SUCCESS:
 				Intent intent = new Intent();
 				intent.setClass(LoginActivity.this, MainActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString("userName", userName.getText().toString());
+				intent.putExtras(bundle);
 				startActivity(intent);
 				LoginActivity.this.finish();
 				break;

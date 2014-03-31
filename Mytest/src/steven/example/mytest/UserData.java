@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,13 +18,17 @@ import android.widget.TextView;
 import android.os.Build;
 
 public class UserData extends ActionBarActivity {
-	
+	private static final String TAG = "UserData";
 	Bundle bundle;
-	String content;
-	String userName;
-	TextView tv_content;
-	TextView tv_userName;
-	ImageView iv_headImage;
+	String description;
+	String title;
+	String startDate;
+	String endDate;
+	TextView tv_startDate;
+	TextView tv_endDate;
+	TextView tv_description;
+	TextView tv_title;
+	ImageView iv_imageURL;
 	Button btn_back;
 	Bitmap bitmap_headImage;
 	
@@ -34,18 +39,28 @@ public class UserData extends ActionBarActivity {
 		
 		bundle = this.getIntent().getExtras();
 		if(bundle == null){
-			
+			Log.v(TAG, "bundle is null!");
 		} else {
-			content = bundle.getString("content");
-			userName = bundle.getString("username");
+			description = bundle.getString("description");
+			title = bundle.getString("title");
+			startDate = bundle.getString("startDate");
+			endDate = bundle.getString("endDate");
 			bitmap_headImage = bundle.getParcelable("headImage");
 		}
-		tv_content = (TextView) findViewById(R.id.detail_UserDetail);
-		tv_content.setText(content);
-		tv_userName = (TextView) findViewById(R.id.detail_UserName);
-		tv_userName.setText(userName);
-		iv_headImage = (ImageView) findViewById(R.id.headImage);
-		iv_headImage.setImageBitmap(bitmap_headImage);
+		tv_description = (TextView) findViewById(R.id.detail_description);
+		tv_description.setText(description);
+		
+		tv_title = (TextView) findViewById(R.id.detail_title);
+		tv_title.setText(title);
+		
+		tv_startDate = (TextView) findViewById(R.id.detail_startDate);
+		tv_startDate.setText(startDate);
+		tv_endDate = (TextView) findViewById(R.id.detail_endDate);
+		tv_endDate.setText(endDate);
+		iv_imageURL = (ImageView) findViewById(R.id.couponImage);
+		iv_imageURL.setImageBitmap(bitmap_headImage);
+		Log.v(TAG, "title: " + title);
+		Log.v(TAG, "description: " + description);
 		
 		btn_back = (Button) findViewById(R.id.btn_detail_back);
 		btn_back.setOnClickListener(new Button.OnClickListener(){
@@ -54,7 +69,7 @@ public class UserData extends ActionBarActivity {
 			}
 		});
 		
-		iv_headImage.setOnClickListener(new ImageView.OnClickListener(){
+		iv_imageURL.setOnClickListener(new ImageView.OnClickListener(){
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();

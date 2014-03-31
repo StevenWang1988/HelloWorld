@@ -19,14 +19,14 @@ public class SetLayout extends Activity{
 	
 	public void mySetLayout(View view){
 		
-		content = (TextView) view.findViewById(R.id.content);
+		content = (TextView) view.findViewById(R.id.description);
 		userName = (TextView) view.findViewById(R.id.title);
 		activity = (Activity) view.getContext();
 		activity.setContentView(R.layout.activity_user_data);
 		
-		detail_content = (TextView) activity.findViewById(R.id.detail_UserDetail);
+		detail_content = (TextView) activity.findViewById(R.id.detail_description);
 		detail_content.setText((String) content.getText());
-		detail_name = (TextView) activity.findViewById(R.id.detail_UserName);
+		detail_name = (TextView) activity.findViewById(R.id.detail_title);
 		detail_name.setText((String) userName.getText());
 		
 		btn_back = (Button) activity.findViewById(R.id.btn_detail_back);

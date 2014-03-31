@@ -16,8 +16,10 @@ import android.widget.TextView;
 public class MyOnItemClickListener implements OnItemClickListener {
 	
 	Activity activity;
-	TextView content;
-	TextView userName;
+	TextView description;
+	TextView title;
+	TextView startDate;
+	TextView endDate;
 	ImageView headImage;
 	Bitmap bitmap_headImage;
 	SetLayout setLayout = new SetLayout();
@@ -34,14 +36,18 @@ public class MyOnItemClickListener implements OnItemClickListener {
 		intent.setClass(view.getContext(), UserData.class);
 		
 		Bundle bundle = new Bundle();
-		content = (TextView) view.findViewById(R.id.content);
-		userName = (TextView) view.findViewById(R.id.title);
-		headImage = (ImageView) view.findViewById(R.id.headImage);
+		description = (TextView) view.findViewById(R.id.description);
+		title = (TextView) view.findViewById(R.id.title);
+		startDate = (TextView) view.findViewById(R.id.startDate);
+		endDate = (TextView) view.findViewById(R.id.endDate);
+		headImage = (ImageView) view.findViewById(R.id.couponImage);
 		headImage.buildDrawingCache();
 		bitmap_headImage = headImage.getDrawingCache();
 		
-		bundle.putString("content", (String) content.getText());
-		bundle.putString("username", (String) userName.getText());
+		bundle.putString("description", (String) description.getText());
+		bundle.putString("title", (String) title.getText());
+		bundle.putString("startDate", (String) startDate.getText());
+		bundle.putString("endDate", (String) endDate.getText());
 		bundle.putParcelable("headImage", bitmap_headImage);
 		
 		intent.putExtras(bundle);

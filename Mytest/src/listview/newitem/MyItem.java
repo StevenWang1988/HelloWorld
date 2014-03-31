@@ -2,14 +2,10 @@ package listview.newitem;
 
 public class MyItem {
 	private String title;
-	private String content;
-	private String headImageUrl;
-	
-	public MyItem(String title, String content, String headImageUrl){
-		this.setTitle(title);
-		this.setContent(content);
-		this.setHeadImageUrl(headImageUrl);
-	}
+	private String description;
+	private String startDate;
+	private String endDate;
+	private String imageURL;
 
 	public MyItem() {
 		// TODO Auto-generated constructor stub
@@ -23,19 +19,35 @@ public class MyItem {
 		this.title = title;
 	}
 
-	public String getContent() {
-		return content;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getHeadImageUrl() {
-		return headImageUrl;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setHeadImageUrl(String headImageUrl) {
-		this.headImageUrl = headImageUrl;
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 }

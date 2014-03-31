@@ -83,11 +83,13 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_test2"
+            android:id="@+id/btn_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:text="@string/test2" />
+            android:onClick="openMapOnClick"
+            android:text="@string/openMap"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btn_test3"

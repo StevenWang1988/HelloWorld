@@ -25,5 +25,9 @@
     <string name="title_activity_fullscreen_image">FullscreenImageActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="couponDate">優惠期間:</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="openMap">開啟地圖</string>
+    <string name="trafficOnOff">交通資訊</string>
 
 </resources>

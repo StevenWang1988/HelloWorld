@@ -20,31 +20,66 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/headImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/couponImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/detail_LinearController"
         android:layout_margin="10dp"
         android:src="@drawable/backGround" />
 
     <TextView
-        android:id="@+id/detail_UserName"
+        android:id="@+id/detail_startDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/headImage"
-        android:layout_below="@+id/detail_LinearController"
-        android:text="Large Text"
-        android:layout_marginTop="10dp"
-        android:maxLines="1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/couponImage"
+        android:text="startDate"
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/detail_UserDetail"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/headImage"
-        android:text="TextView" />
+        android:layout_alignBaseline="@+id/detail_endDate"
+        android:layout_alignBottom="@+id/detail_endDate"
+        android:layout_toRightOf="@+id/detail_startDate"
+        android:text="~" />
+
+    <TextView
+        android:id="@+id/detail_endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/textView4"
+        android:text="endDate"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/couponImage"
+        android:layout_toRightOf="@+id/couponImage"
+        android:text="TextView"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_startDate"
+        android:layout_below="@+id/detail_title"
+        android:text="@string/couponDate"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/detail_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/couponImage"
+        android:layout_below="@+id/couponImage"
+        android:text="TextView"
+        android:textSize="18sp" />
 
 </RelativeLayout>
