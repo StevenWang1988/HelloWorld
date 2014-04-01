@@ -7,12 +7,15 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import steven.example.mytest.R;
 import listview.newitem.MyItem;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
@@ -21,6 +24,7 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
 	
 	private String ImageURL;
 	public int data = 0;
+	private Animation myFadeInAnimation;
 
 	public LoadBitmap(ImageView view, String url){
 		imageViewReference = new WeakReference<ImageView>(view);
@@ -55,7 +59,6 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
 
 	@Override
 	protected void onPostExecute(Bitmap mBitmap) {
-//		this.image.setImageBitmap(mBitmap);
 		if (isCancelled()) {
 			mBitmap = null;
         }
@@ -65,6 +68,8 @@ public class LoadBitmap extends AsyncTask<Integer, String, Bitmap>{
                     getBitmapWorkerTask(imageView);
             if (this == bitmapWorkerTask && imageView != null) {
             	imageView.setImageBitmap(mBitmap);
+            	myFadeInAnimation = AnimationUtils.loadAnimation(imageViewReference.get().getContext(), R.anim.fadein);
+            	imageView.startAnimation(myFadeInAnimation);
             }
         }
 	}

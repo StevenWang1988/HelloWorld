@@ -6,6 +6,17 @@
     tools:context="steven.example.mytest.LoginActivity"
     tools:ignore="MergeRootFrame" >
 
+    <ImageView
+        android:id="@+id/loginImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/image" />
+
     <EditText
         android:id="@+id/editT_userPwd"
         android:layout_width="match_parent"
@@ -15,26 +26,6 @@
         android:ems="10"
         android:hint="@string/passHint"
         android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/startDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editT_userPwd"
-        android:layout_alignParentLeft="true"
-        android:text="@string/userPass"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editT_userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/startDate"
-        android:layout_alignParentLeft="true"
-        android:maxLines="1"
-        android:ems="10"
-        
-        android:hint="@string/inputHint" />
 
     <TextView
         android:id="@+id/textv_userName"
@@ -54,8 +45,30 @@
         android:onClick="LoginOnClick"
         android:text="@string/login" />
 
+    <TextView
+        android:id="@+id/textv_userPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editT_userPwd"
+        android:layout_alignParentLeft="true"
+        android:text="@string/userPass"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editT_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textv_userPwd"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="@string/inputHint"
+        android:maxLines="1" >
+
+        <requestFocus />
+    </EditText>
+
     <ProgressBar
-        android:id="@+id/progressBar_login"
+        android:id="@+id/progressBar_Login"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

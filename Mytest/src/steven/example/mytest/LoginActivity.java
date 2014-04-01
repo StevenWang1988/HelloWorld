@@ -1,11 +1,11 @@
 package steven.example.mytest;
 
-import java.util.concurrent.ExecutionException;
+import com.enrique.stackblur.StackBlurManager;
 
-import steven.login.AsyncLogin;
 import test.example.handler.ServiceRequest;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import steven.login.LoginStates;
@@ -29,15 +30,21 @@ public class LoginActivity extends ActionBarActivity {
 	Button btn_login;
 	private static final int OFF = 0;
 	private static final int ON = 1;
+	private StackBlurManager _stackBlurManager;
+	private ImageView loginImage;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
-		btn_login = (Button) LoginActivity.this.findViewById(R.id.btn_login);
-		progressBar_login = (ProgressBar) LoginActivity.this.findViewById(R.id.progressBar_login);
+		btn_login = (Button) this.findViewById(R.id.btn_login);
+		progressBar_login = (ProgressBar) this.findViewById(R.id.progressBar_Login);
+		loginImage = (ImageView) this.findViewById(R.id.loginImage);
+		
 		progressBar_login.setVisibility(View.INVISIBLE);
+		_stackBlurManager = new StackBlurManager(BitmapFactory.decodeResource(loginImage.getResources(), R.drawable.image));
+		loginImage.setImageBitmap(_stackBlurManager.process(50));
 	}
 	
 	

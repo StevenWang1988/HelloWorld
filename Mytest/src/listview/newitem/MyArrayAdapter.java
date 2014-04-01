@@ -3,15 +3,10 @@ package listview.newitem;
 import steven.example.mytest.R;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Handler;
-import android.os.HandlerThread;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +25,7 @@ public class MyArrayAdapter extends ArrayAdapter<MyItem>{
 	private TextView startDateView;
 	private TextView endDateView;
 	private ImageView headImage;
-	private Animation myFadeInAnimation;
+	
 	
 	public MyArrayAdapter(Context context, int resource, MyItem[] items) {
 		super(context, resource, items);
@@ -62,9 +57,6 @@ public class MyArrayAdapter extends ArrayAdapter<MyItem>{
 		headImage = (ImageView) convertView.findViewById(R.id.couponImage);
 		LoadBitmap.loadBitmap(position, headImage, this.items);
 		
-		myFadeInAnimation = AnimationUtils.loadAnimation(headImage.getContext(), R.anim.fadein);
-		headImage.startAnimation(myFadeInAnimation);
-
 		adapterCount++;
 		return convertView;
 	}
