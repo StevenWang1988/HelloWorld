@@ -23,13 +23,13 @@ public class LoginActivity extends Activity  {
 
 	private static final String TAG = "LoginActivity";
 //	String uriAPI = ServerSetting.ServerLocation + ServerSetting.Login;
-	private String uriAPI = "";
-	EditText userName;
-	EditText userPwd;
-	ProgressBar progressBar_login;
-	Button btn_login;
 	private static final int OFF = 0;
 	private static final int ON = 1;
+	private String uriAPI = "";
+	private EditText userName;
+	private EditText userPwd;
+	private ProgressBar progressBar_login;
+	private Button btn_login;
 	private StackBlurManager _stackBlurManager;
 	private ImageView loginImage;
 	
