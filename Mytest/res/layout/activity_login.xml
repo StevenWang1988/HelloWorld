@@ -63,8 +63,6 @@
         android:ems="10"
         android:hint="@string/inputHint"
         android:maxLines="1" >
-
-        <requestFocus />
     </EditText>
 
     <ProgressBar

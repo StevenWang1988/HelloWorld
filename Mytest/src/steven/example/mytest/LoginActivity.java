@@ -1,9 +1,7 @@
 package steven.example.mytest;
 
-import com.enrique.stackblur.StackBlurManager;
-
 import test.example.handler.ServiceRequest;
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -19,7 +17,9 @@ import android.widget.Toast;
 import steven.login.LoginStates;
 import steven.login.ServerSetting;
 
-public class LoginActivity extends ActionBarActivity {
+import com.enrique.stackblur.StackBlurManager;
+
+public class LoginActivity extends Activity  {
 
 	private static final String TAG = "LoginActivity";
 //	String uriAPI = ServerSetting.ServerLocation + ServerSetting.Login;
